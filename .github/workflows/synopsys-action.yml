@@ -15,9 +15,9 @@ jobs:
       - name: Polaris Scan
         uses: synopsys-sig/synopsys-action@v1.8.0
         with:
-          polaris_server_url: ${{ secrets.POLARIS_SERVER_URL }}
-          polaris_access_token: ${{ secrets.POLARIS_ACCESS_TOKEN }}
-          polaris_assessment_types: "SCA,SAST"
-          polaris_prComment_enabled: ${{ github.event_name == 'pull_request' && 'true' }}
-          polaris_prComment_severities: "Critical, High, Medium, Low, Informational"
-          github_token: ${{ secrets.GH_TOKEN }}
+            polaris_server_url: ${{ secrets.POLARIS_SERVER_URL }}
+            polaris_access_token: ${{ secrets.POLARIS_ACCESS_TOKEN }}
+            polaris_assessment_types: "SCA,SAST"
+            polaris_prComment_enabled: ${{ github.event_name == 'pull_request' && 'true' }}
+            polaris_prComment_severities: "Critical, High, Medium, Low, Informational"
+            github_token: ${{ secrets.GH_TOKEN }}
