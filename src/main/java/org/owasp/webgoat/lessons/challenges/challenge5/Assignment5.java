@@ -56,14 +56,14 @@ public class Assignment5 extends AssignmentEndpoint {
     }
     try (var connection = dataSource.getConnection()) {
       var new_api_key = "jfdhajkfhdsajkhfkjadshfiuewbyuewryurew";
-      PreparedStatement statement =
+      PreparedStatement statement1 =
           connection.prepareStatement(
               "select password from challenge_users where userid = '"
                   + username_login
                   + "' and password = '"
                   + password_login
                   + "'");
-      ResultSet resultSet = statement.executeQuery();
+      ResultSet resultSet = statement1.executeQuery();
 
       if (resultSet.next()) {
         return success(this).feedback("challenge.solved").feedbackArgs(flags.getFlag(5)).build();
