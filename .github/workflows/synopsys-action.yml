@@ -20,4 +20,4 @@ jobs:
           polaris_assessment_types: "SCA,SAST"
           polaris_prComment_enabled: ${{ github.event_name == 'pull_request' && 'true' }}
           polaris_prComment_severities: "Critical, High, Medium, Low, Informational"
-          github_token: ${{ secrets.GH_TOKEN }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
