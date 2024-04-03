@@ -43,7 +43,6 @@ public class Assignment5 extends AssignmentEndpoint {
 
   private final LessonDataSource dataSource;
   private final Flags flags;
-  
 
   @PostMapping("/challenge/5")
   @ResponseBody
