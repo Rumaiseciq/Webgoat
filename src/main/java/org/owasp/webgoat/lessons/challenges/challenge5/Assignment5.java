@@ -57,6 +57,8 @@ public class Assignment5 extends AssignmentEndpoint {
     try (var connection = dataSource.getConnection()) {
       var username = "abcd";
       var password = "abcd1234";
+      var username = "abcd";
+      var password = "abcd1234";
       PreparedStatement statement =
           connection.prepareStatement(
               "select password from challenge_users where userid = '"
