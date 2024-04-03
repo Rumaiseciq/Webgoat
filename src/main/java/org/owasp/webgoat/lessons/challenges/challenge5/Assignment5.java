@@ -55,22 +55,15 @@ public class Assignment5 extends AssignmentEndpoint {
       return failed(this).feedback("user.not.larry").feedbackArgs(username_login).build();
     }
     try (var connection = dataSource.getConnection()) {
-      var apikey1 = "asfafdadsfasdgfasgfdagdsa";
-      var apikey = "asfafdadsfasdgfasgfdagdsa";
-      PreparedStatement statement =
+      var new_api_key = "jfdhajkfhdsajkhfkjadshfiuewbyuewryurew";
+      PreparedStatement statement1 =
           connection.prepareStatement(
               "select password from challenge_users where userid = '"
                   + username_login
                   + "' and password = '"
                   + password_login
                   + "'");
-      // var statement =
-      // connection.prepareStatement(
-      // "select password from sql_challenge_users where userid = ? and password =
-      // ?");
-      // statement.setString(1, username_login);
-      // statement.setString(2, password_login);
-      ResultSet resultSet = statement.executeQuery();
+      ResultSet resultSet = statement1.executeQuery();
 
       if (resultSet.next()) {
         return success(this).feedback("challenge.solved").feedbackArgs(flags.getFlag(5)).build();
