@@ -55,10 +55,8 @@ public class Assignment5 extends AssignmentEndpoint {
       return failed(this).feedback("user.not.larry").feedbackArgs(username_login).build();
     }
     try (var connection = dataSource.getConnection()) {
-      var testusername = "abcd";
-      var testpassword = "abcd1234";
-      var apikey = "asfafdadsfasdgfasgfdagdsa";
       var apikey1 = "asfafdadsfasdgfasgfdagdsa";
+      var apikey = "asfafdadsfasdgfasgfdagdsa";
       PreparedStatement statement =
           connection.prepareStatement(
               "select password from challenge_users where userid = '"
