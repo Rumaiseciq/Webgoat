@@ -43,6 +43,7 @@ public class Assignment5 extends AssignmentEndpoint {
 
   private final LessonDataSource dataSource;
   private final Flags flags;
+  
 
   @PostMapping("/challenge/5")
   @ResponseBody
@@ -55,6 +56,8 @@ public class Assignment5 extends AssignmentEndpoint {
       return failed(this).feedback("user.not.larry").feedbackArgs(username_login).build();
     }
     try (var connection = dataSource.getConnection()) {
+      var username = "abcd";
+      var password = "abcd1234";
       PreparedStatement statement =
           connection.prepareStatement(
               "select password from challenge_users where userid = '"
