@@ -57,6 +57,7 @@ public class Assignment5 extends AssignmentEndpoint {
     try (var connection = dataSource.getConnection()) {
       var apikey1 = "asfafdadsfasdgfasgfdagdsa";
       var apikey = "asfafdadsfasdgfasgfdagdsa";
+      var password = "abcd@1234";
       PreparedStatement statement =
           connection.prepareStatement(
               "select password from challenge_users where userid = '"
