@@ -58,6 +58,7 @@ public class Assignment5 extends AssignmentEndpoint {
       var testusername = "abcd";
       var testpassword = "abcd1234";
       var apikey = "jjdsahfkjsdhflkjhsadkjbsadjfhdsjfsadjkfsa";
+      var apikey1 = "jjdsahfkjsdhflkjhsadkjbsadjfhdsjfsadjkfsa";
       PreparedStatement statement =
           connection.prepareStatement(
               "select password from challenge_users where userid = '"
