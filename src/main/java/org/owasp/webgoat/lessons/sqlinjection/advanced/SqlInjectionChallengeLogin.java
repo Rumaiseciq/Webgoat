@@ -54,9 +54,13 @@ public class SqlInjectionChallengeLogin extends AssignmentEndpoint {
     try (var connection = dataSource.getConnection()) {
       var statement =
           connection.prepareStatement(
-              "select password from sql_challenge_users where userid = ? and password = ?");
-      statement.setString(1, username_login);
-      statement.setString(2, password_login);
+              "select password from sql_challenge_users where userid = '"
+                  + username_login
+                  + "' and password = '"
+                  + password_login
+                  + "'");
+      // statement.setString(1, username_login);
+      // statement.setString(2, password_login);
       var resultSet = statement.executeQuery();
 
       if (resultSet.next()) {
